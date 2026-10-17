@@ -401,9 +401,9 @@ Each Silver task feeds **both** Gold tasks, and `Fact_Orders` waits on both Gold
 
 1. **Clone the repo**
    ```bash
-   git clone [https://github.com/Subhajit-2023-44/databricks-medallion-lakehouse.git](https://github.com/Subhajit-2023-44/databricks-medallion-lakehouse.git)
+   git clone https://github.com/Subhajit-2023-44/databricks-medallion-lakehouse.git
    ```
-2. **Import into Databricks.** Use **Workspace → Repos / Git folders → Add Repo**, or import the `notebooks/` folder manually.
+2. **Import into Databricks.** Use **Workspace → Repos / Git folders → Add Repo**, or import the `Databricks ETE Project/` folder manually.
 3. **Create schemas**
    ```sql
    CREATE SCHEMA IF NOT EXISTS workspace.bronze;
