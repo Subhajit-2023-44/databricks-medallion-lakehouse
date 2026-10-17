@@ -401,7 +401,7 @@ Each Silver task feeds **both** Gold tasks, and `Fact_Orders` waits on both Gold
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
+   git clone [https://github.com/Subhajit-2023-44/databricks-medallion-lakehouse.git](https://github.com/Subhajit-2023-44/databricks-medallion-lakehouse.git)
    ```
 2. **Import into Databricks.** Use **Workspace → Repos / Git folders → Add Repo**, or import the `notebooks/` folder manually.
 3. **Create schemas**
@@ -474,4 +474,4 @@ LIMIT 10;
 
 ## Author
 
-**Subhajit Patra** · [LinkedIn](https://www.linkedin.com/in/subhajit-patra-b21a3028b) · [GitHub](https://github.com/Subhajit-2023-44)
+**Subhajit Patra** · [LinkedIn](https://www.linkedin.com/in/subhajit-patra-4757a0293/) · [GitHub](https://github.com/Subhajit-2023-44)
