@@ -60,10 +60,10 @@ df.write.mode("overwrite").format("delta").save("/Volumes/workspace/default/silv
 
 # COMMAND ----------
 
-# Volume se delta data read karein
+# Read transformed customers Delta data from volume
 df_cust = spark.read.format("delta").load("/Volumes/workspace/default/silver/customers")
 
-# Usko workspace.silver.customers_silver table mein register karein
+# Register customers_silver managed Delta table in workspace.silver schema
 df_cust.write.format("delta").mode("overwrite").saveAsTable("workspace.silver.customers_silver")
 
 # COMMAND ----------
