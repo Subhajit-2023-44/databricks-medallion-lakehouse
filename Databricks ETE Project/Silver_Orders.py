@@ -108,10 +108,10 @@ df.write.format("delta").mode("overwrite").save("/Volumes/workspace/default/silv
 
 # COMMAND ----------
 
-# Volume se orders delta data read karein
+# Read transformed orders Delta data from volume
 df_orders = spark.read.format("delta").load("/Volumes/workspace/default/silver/orders")
 
-# workspace.silver schema mein orders_silver table register karein
+# Register orders_silver managed Delta table in workspace.silver schema
 df_orders.write.format("delta").mode("overwrite").saveAsTable("workspace.silver.orders_silver")
 
 # COMMAND ----------
