@@ -1,9 +1,9 @@
 # Databricks notebook source
-# 1. Volume se parquet data read karke bronze schema mein Delta table register karein
+# 1. Ingest raw parquet data from volume and register as Bronze Delta table
 df_temp = spark.read.format("parquet").load("/Volumes/workspace/default/source/regions")
 df_temp.write.format("delta").mode("overwrite").saveAsTable("workspace.bronze.regions")
 
-# 2. Table se DataFrame read karein (bilkul Ansh ki tarah)
+# 2. Read DataFrame from Bronze Delta table
 df = spark.read.table("workspace.bronze.regions")
 display(df)
 
@@ -22,10 +22,10 @@ display(df)
 
 # COMMAND ----------
 
-# Volume se regions delta data read karein
+# Ingest refined regions Delta data from volume
 df_reg = spark.read.format("delta").load("/Volumes/workspace/default/silver/regions")
 
-# workspace.silver schema mein regions_silver table register karein
+# Register regions_silver managed table in workspace.silver schema
 df_reg.write.format("delta").mode("overwrite").saveAsTable("workspace.silver.regions_silver")
 
 # COMMAND ----------
