@@ -83,10 +83,10 @@ display(df_join)
 
 # COMMAND ----------
 
-# Cell 1: Naye records filter karna
+# Filter incoming new customer records (unmatched keys)
 df_new = df_join.filter(df_join['old_DimCustomerKey'].isNull())
 
-# Cell 2: Existing/purane records filter karna
+# Filter existing customer records for update processing
 df_old = df_join.filter(df_join['old_DimCustomerKey'].isNotNull())
 
 # COMMAND ----------
@@ -136,7 +136,7 @@ display(df_new)
 
 # COMMAND ----------
 
-# Naye records ke liye surrogate key generate karna
+# Generate surrogate keys for new records starting from 1
 df_new = df_new.withColumn("DimCustomerKey", monotonically_increasing_id() + lit(1))
 
 display(df_new)
