@@ -73,7 +73,7 @@ df.write.format("delta") \
 
 # COMMAND ----------
 
-# Volume se delta data read karke managed table register karein
+# Read refined products Delta data from volume and register managed table
 df_prod = spark.read.format("delta").load("/Volumes/workspace/default/silver/products")
 df_prod.write.format("delta").mode("overwrite").saveAsTable("workspace.silver.products_silver")
 
